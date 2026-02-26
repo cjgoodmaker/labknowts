@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "labknowts",
   "display_name": "LabKnowts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Your centralized lab notebook. Track every project, every session, every insight — all in one place.",
   "author": {
     "name": "charlesgoodmaker"
@@ -48,6 +48,18 @@
     {
       "name": "labknowts_init",
       "description": "Create or register a new project"
+    },
+    {
+      "name": "labknowts_fork",
+      "description": "Fork a dimension to create a parallel timeline"
+    },
+    {
+      "name": "labknowts_dimensions",
+      "description": "List all dimensions in a project"
+    },
+    {
+      "name": "labknowts_delete_dimension",
+      "description": "Delete a dimension and its descendants"
     }
   ],
   "compatibility": {
