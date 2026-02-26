@@ -1,0 +1,60 @@
+{
+  "manifest_version": "0.3",
+  "name": "labknowts",
+  "display_name": "LabKnowts",
+  "version": "0.1.0",
+  "description": "Your centralized lab notebook. Track every project, every session, every insight — all in one place.",
+  "author": {
+    "name": "charlesgoodmaker"
+  },
+  "license": "MIT",
+  "keywords": ["notebook", "lab", "research", "logging", "project-tracking"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/mcp-server.cjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/mcp-server.cjs"],
+      "env": {
+        "LABKNOWTS_DATA_DIR": "${user_config.data_directory}/data/projects"
+      }
+    }
+  },
+  "user_config": {
+    "data_directory": {
+      "type": "directory",
+      "title": "LabKnowts Directory",
+      "description": "Path to your labknowts project (e.g. ~/Developer/labknowts). Notes are stored in the data/ subfolder.",
+      "required": true
+    }
+  },
+  "tools": [
+    {
+      "name": "labknowts_log",
+      "description": "Log a timestamped entry to your notebook"
+    },
+    {
+      "name": "labknowts_read",
+      "description": "Read recent entries from a project"
+    },
+    {
+      "name": "labknowts_list",
+      "description": "List all tracked projects"
+    },
+    {
+      "name": "labknowts_search",
+      "description": "Search across all project notes"
+    },
+    {
+      "name": "labknowts_init",
+      "description": "Create or register a new project"
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

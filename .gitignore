@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# mcp server build
+mcp-server/dist/
+/dist/
+
+# data
+/data/
+
+# mcpb
+*.mcpb
